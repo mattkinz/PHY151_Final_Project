@@ -1,0 +1,129 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Various Solutions for Spring 17 372 class
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\newcommand{\sss}{\mbox{$\mathcal L$}}
+
+
+\begin{document}
+
+\vspace*{-.4in}
+
+\begin{center}
+{\Large\bf Matt Kinsinger }
+
+{\Large\bf PHY 151 Final Project}
+
+\end{center}
+
+
+
+\noindent Using Kirchoff's loop law to solve for the current in the circuit at time t:
+
+\vspace{.2in}
+
+\noindent Ohm's Law : V = IR
+
+\noindent $\varepsilon =$ constant voltage source
+
+
+\noindent $v_R=$ voltage across the resistor R
+
+\noindent $v_C=$ voltage across the capacitor C
+
+\noindent $q(t)=$ charge on the resistor at time t
+
+\vspace{.2in}
+
+\noindent By using Kirchoff's loop law on our circuit we attain the following differential equation:
+
+\begin{align*}
+\varepsilon-v_R-v_C&=0 \\ \varepsilon-v_C&=v_R \\ \varepsilon-\frac{q(t)}{C}&=i(t)R &&since\;\;v_C(t)=\frac{q(t)}{C},\;and\;\;v_R(t)=i(t)R \\ \varepsilon-\frac{q(t)}{C}&=q^{'}(t)R &&since\;\;i(t)=q^{'}(t) \\ \left(\frac{1}{RC}\right)\left[\varepsilon C-q(t)\right]&=q^{'}(t) \\ \frac{1}{RC}&=\frac{q^{'}(t)}{\varepsilon C-q(t)} \\ \frac{1}{RC}&=-\left[ln\left(\varepsilon C-q(t)\right)\right]^{'} \\\int\frac{1}{RC}\;dt&=\int-\left[ln\left(\varepsilon C-q(t)\right)\right]^{'}\;dt \\ \frac{t}{RC}+K&=-ln\left(\varepsilon C-q(t)\right) \\ K-\frac{t}{RC}&=ln\left(\varepsilon C-q(t)\right) \\ e^{K-\frac{t}{RC}}&=e^{ln\left(\varepsilon C-q(t)\right)} \\ e^Ke^{-\frac{t}{RC}}&=\varepsilon C-q(t) \\ Ke^{-\frac{t}{RC}}&=\varepsilon C-q(t)&&(1) \\ \\ K&=\varepsilon C-0&&since\;\;q(0)=0 \\ K&=\varepsilon C&&(2) \\ \\ \varepsilon Ce^{-\frac{t}{RC}}&=\varepsilon C-q(t)&& by\;\;(1)\;\;and\;\;(2) \\ q(t)&=\varepsilon C-\varepsilon Ce^{-\frac{t}{RC}} \\ q(t)&=\varepsilon C\left[1-e^{-\frac{t}{RC}}\right]&&(3)
+\end{align*}
+
+\vspace{.2in}
+\noindent (3) is an expression for the charge on the capacitor at time $t$. Since the charges are deposited on the capacitor by the current we can differentiate this expression to find an expression for the current in the circuit at time $t$: 
+
+\begin{align*}
+i(t)&=q^{'}(t)\\&=\varepsilon C\left[\frac{1}{RC}e^{\frac{-t}{RC}}\right]\\&=\frac{\varepsilon}{R}\left[e^{\frac{-t}{RC}}\right]&&(4)
+\end{align*}
+
+\vspace{.2in}
+
+\noindent The distance of the proton from the wire of the circuit is small in comparison with the length of the wire. I will approximate the wire as an infinitely long current carrying wire. We can use the Biot-Savart law to find the magnetic field at any distance $r$ away from the wire. 
+\begin{align*}
+\left|\vec{B}\right|&=\frac{\mu_0I}{4\pi r}&&(5)
+\end{align*}
+
+\vspace{.1in}
+
+\noindent As shown in the diagram, using the right hand rule we know that to the right of the wire $\vec{B}$ is directed into the page. 
+
+\vspace{.2in}
+
+\noindent The proton has an initial velocity in the postive $y$-direction, thus the velocity of the proton and the direction of the magentic field at the location of the proton are perpendicular to each other. The force on our moving proton in the presence of a magnetic field is:
+\begin{align*}
+F_m&=q\vec{v}\times\vec{B}\\&=qvB\sin{90^\circ}\\&=qvB\\&=qv\left(\frac{\mu_0I}{4\pi r}\right)&&by\;\;(5)\\&=qv\left(\frac{\mu_0}{4\pi r}\right)I\\&=qv\left(\frac{\mu_0}{4\pi r}\right)\left(\frac{\varepsilon}{R}\left[e^{\frac{-t}{RC}}\right]\right)&&by\;\;(4)&&&(6)
+\end{align*}
+
+\newpage
+
+\noindent We will consider the affect of this force on the velocity of the proton over small time intervals. Thus, we will consider the momentum of the proton:
+\[
+\vec{p}=m\vec{v}
+\] 
+\[
+\Delta\vec{p}=m\Delta\vec{v}
+\]
+
+\vspace{.2in}
+
+\noindent We can relate the change in momemtum of the proton to the force $F_m$ over time $\Delta t$:
+\begin{eqnarray*}
+\Delta\vec{p}&=&m\Delta\vec{v}\\&=&\vec{F_m}\Delta t
+\end{eqnarray*}
+
+\vspace{.2in}
+
+\noindent Solving for $\left|\Delta\vec{v}\right|$ and using (6) for $\left|\vec{F_m}\right|$ we have:
+\begin{align*}
+\Delta\vec{v}&=\frac{1}{m}\vec{F_m}\Delta t\\&=\frac{1}{m}\left[qv\left(\frac{\mu_0}{4\pi r}\right)\left(\frac{\varepsilon}{R}\left[e^{\frac{-t}{RC}}\right]\right)\right]\Delta t &&(7)
+\end{align*} 
+
+\vspace{.2in}
+
+\noindent We can visualize an approximation of the motion of the proton in the magnetic field created by the wire of charge using VPython. I will use time intervals of $\Delta t=.001$. At each point in time the program will use equation (7) to approximate the change in the proton's velocity over that time interval. A true calculation would require integration, but summing over $\Delta t=.001$ will give us a useful approximation for the purposes of this project. With $t_i$ representing the points in time at which we are calculating the velocity of the proton, we can approximate the velocity of the proton over the $i^{th}$ time interval $\Delta t$ by:
+\[
+v_{avg,i}=\left(v_{i-1}\right)+\frac{\Delta v}{2}
+\]
+
+\vspace{.2in}
+
+\noindent We can then calculate the change in position of the proton over the $i^{th}$ time interval by:
+\[
+\Delta s_i=\left(v_{avg,i}\right)\Delta t
+\]
+
+\vspace{.2in}
+
+\noindent By looking at equation (7) for the $\Delta v$ of the proton we can decide on some parameters to vary while holding all others fixed and test to see how they affect the path of the proton. In particular we can test for a range of values of:
+\[
+R,\;C,\;\varepsilon,\;v_{initial},\;q,\;and\;\;m
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

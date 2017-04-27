@@ -61,26 +61,23 @@ i(t)&=q^{'}(t)\\&=\varepsilon C\left[\frac{1}{RC}e^{\frac{-t}{RC}}\right]\\&=\fr
 
 \vspace{.2in}
 
-\noindent In this project the proton will remain in the area between the wires and (see figure A) the direction of the current in the wires implies, by the right-hand rule, that the $\vec{B}$-field is directed out of the page, hence:
+\noindent In this project I am trying to keep the proton within the area between the wires (see figure A). The direction of the current in the wires make this happen. Using the right-hand rule we see that the $\vec{B}$-fields are directed in opposite directions:
 \begin{align*}
-\vec{B}&=0\;\hat{x}+0\;\hat{y}+\frac{\mu_0I}{4\pi r}\;\hat{z}&&(5)
+\vec{B}_L&=0\;\hat{x}+0\;\hat{y}+\frac{\mu_0I}{4\pi r}\;\hat{z}&&\text{(the magnetic field due to the wire on the left side)}\\\vec{B}_R&=0\;\hat{x}+0\;\hat{y}-\frac{\mu_0I}{4\pi r}\;\hat{z}&&\text{(the magnetic field due to the wire on the right side)}
 \end{align*}
-
-
-\vspace{.1in}
-
-\noindent As shown in the diagram, using the right hand rule we know that to the right of the wire $\vec{B}$ is directed into the page. 
 
 \vspace{.2in}
 
-\noindent Due to the set up of my system the proton will only have velocity components in the $x$ and $y$ directions. The force on our moving proton in the presence of a magnetic field is:
+\noindent Due to the set up of my system the proton will only have velocity components in the $x$ and $y$ directions. The force on our moving proton in the presence of a magnetic field is the superposition of the force due to the left and right side wires:
 \begin{align*}
-\vec{F_m}&=q\vec{v}\times\vec{B}\\&=q(v_x,v_y,v_z)\times (B_x,B_y,B_z)\\&=qvB\\&=qv\left(\frac{\mu_0I}{4\pi r}\right)&&by\;\;(5)\\&=qv\left(\frac{\mu_0}{4\pi r}\right)I\\&=qv\left(\frac{\mu_0}{4\pi r}\right)\left(\frac{\varepsilon}{R}\left[e^{\frac{-t}{RC}}\right]\right)&&by\;\;(4)&&&(6)
+\vec{F}_m&=\vec{F}_{m,L}+\vec{F}_{m,R}\\&=\left[q\vec{v}\times\vec{B}_L\right]+\left[q\vec{v}\times\vec{B}_R\right]&&(5)
 \end{align*}
+
+
 
 \newpage
 
-\noindent We will consider the affect of this force on the velocity of the proton over small time intervals. Thus, we will consider the momentum of the proton:
+\noindent I will consider the momentum of the proton in order to calculate the affect of the net magnetic force on the velocity of the proton over small time intervals:
 \[
 \vec{p}=m\vec{v}
 \] 
@@ -92,14 +89,14 @@ i(t)&=q^{'}(t)\\&=\varepsilon C\left[\frac{1}{RC}e^{\frac{-t}{RC}}\right]\\&=\fr
 
 \noindent We can relate the change in momemtum of the proton to the force $F_m$ over time $\Delta t$:
 \begin{eqnarray*}
-\Delta\vec{p}&=&m\Delta\vec{v}\\&=&\vec{F_m}\Delta t
+\Delta\vec{p}&=&m\Delta\vec{v}\\&=&\vec{F}_m\Delta t
 \end{eqnarray*}
 
 \vspace{.2in}
 
-\noindent Solving for $\left|\Delta\vec{v}\right|$ and using (6) for $\left|\vec{F_m}\right|$ we have:
+\noindent Solving for $\left|\Delta\vec{v}\right|$ and using (6) for $\left|\vec{F}_m\right|$ we have:
 \begin{align*}
-\Delta\vec{v}&=\frac{1}{m}\vec{F_m}\Delta t\\&=\frac{1}{m}\left[qv\left(\frac{\mu_0}{4\pi r}\right)\left(\frac{\varepsilon}{R}\left[e^{\frac{-t}{RC}}\right]\right)\right]\Delta t &&(7)
+\Delta\vec{v}&=\frac{1}{m}\vec{F}_m\Delta t\\&=\frac{1}{m}\left[\vec{F}_{m,L}+\vec{F}_{m,R}\right]\Delta t\\&=\frac{1}{m}\left[q\vec{v}\times\vec{B}_L\right]\Delta t + \frac{1}{m}\left[q\vec{v}\times\vec{B}_R\right]\Delta t\\&=\frac{1}{m}\left[q\vec{v}\times\left(0\;\hat{x}+0\;\hat{y}+\frac{\mu_0I}{4\pi r}\;\hat{z}\right)\right]\Delta t + \frac{1}{m}\left[q\vec{v}\times\left(0\;\hat{x}+0\;\hat{y}-\frac{\mu_0I}{4\pi r}\;\hat{z}\right)\right]\Delta t&&(6)
 \end{align*} 
 
 \vspace{.2in}
@@ -118,9 +115,9 @@ v_{avg,i}=\left(v_{i-1}\right)+\frac{\Delta v}{2}
 
 \vspace{.2in}
 
-\noindent By looking at equation (7) for the $\Delta v$ of the proton we can decide on some parameters to vary while holding all others fixed and test to see how they affect the path of the proton. In particular we can test for a range of values of:
+\noindent By looking at equation (6) for the $\Delta v$ of the proton we can decide on some parameters to vary while holding all others fixed and test to see how they affect the path of the proton. In particular we can test for a range of values of:
 \[
-R,\;C,\;\varepsilon,\;v_{initial},\;q,\;and\;\;m
+R,\;C,\;\varepsilon,\;v_{initial},\;q,\;\text{and}\;\;m
 \]
 
 

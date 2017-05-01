@@ -5,6 +5,8 @@
 \usepackage{fullpage}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{{images/}}
 
 \newcommand{\sss}{\mbox{$\mathcal L$}}
 
@@ -16,15 +18,15 @@
 \begin{center}
 {\Large\bf Matt Kinsinger }
 
-{\Large\bf PHY 151 Final Project}
+{\bf PHY 151 Final Project}
+
+{\bf\underline{RC-circuits and Magnetic Forces}}
 
 \end{center}
 
+\vspace{.1in}
 
-
-\noindent Using Kirchoff's loop law to solve for the current in the circuit at time t:
-
-\vspace{.2in}
+\noindent Kirchoff's loop law for circuits
 
 \noindent Ohm's Law : V = IR
 
@@ -42,7 +44,7 @@
 \noindent By using Kirchoff's loop law on our circuit we attain the following differential equation:
 
 \begin{align*}
-\varepsilon-v_R-v_C&=0 \\ \varepsilon-v_C&=v_R \\ \varepsilon-\frac{q(t)}{C}&=i(t)R &&since\;\;v_C(t)=\frac{q(t)}{C},\;and\;\;v_R(t)=i(t)R \\ \varepsilon-\frac{q(t)}{C}&=q^{'}(t)R &&since\;\;i(t)=q^{'}(t) \\ \left(\frac{1}{RC}\right)\left[\varepsilon C-q(t)\right]&=q^{'}(t) \\ \frac{1}{RC}&=\frac{q^{'}(t)}{\varepsilon C-q(t)} \\ \frac{1}{RC}&=-\left[ln\left(\varepsilon C-q(t)\right)\right]^{'} \\\int\frac{1}{RC}\;dt&=\int-\left[ln\left(\varepsilon C-q(t)\right)\right]^{'}\;dt \\ \frac{t}{RC}+K&=-ln\left(\varepsilon C-q(t)\right) \\ K-\frac{t}{RC}&=ln\left(\varepsilon C-q(t)\right) \\ e^{K-\frac{t}{RC}}&=e^{ln\left(\varepsilon C-q(t)\right)} \\ e^Ke^{-\frac{t}{RC}}&=\varepsilon C-q(t) \\ Ke^{-\frac{t}{RC}}&=\varepsilon C-q(t)&&(1) \\ \\ K&=\varepsilon C-0&&since\;\;q(0)=0 \\ K&=\varepsilon C&&(2) \\ \\ \varepsilon Ce^{-\frac{t}{RC}}&=\varepsilon C-q(t)&& by\;\;(1)\;\;and\;\;(2) \\ q(t)&=\varepsilon C-\varepsilon Ce^{-\frac{t}{RC}} \\ q(t)&=\varepsilon C\left[1-e^{-\frac{t}{RC}}\right]&&(3)
+\varepsilon-v_R-v_C&=0 \\ \varepsilon-v_C&=v_R \\ \varepsilon-\frac{q(t)}{C}&=i(t)R &&\text{since $v_C(t)=\frac{q(t)}{C}$, and $v_R(t)=i(t)R$} \\ \varepsilon-\frac{q(t)}{C}&=q^{'}(t)R &&\text{since $i(t)=q^{'}(t)$} \\ \left(\frac{1}{RC}\right)\left[\varepsilon C-q(t)\right]&=q^{'}(t) \\ \frac{1}{RC}&=\frac{q^{'}(t)}{\varepsilon C-q(t)} \\ \frac{1}{RC}&=-\left[ln\left(\varepsilon C-q(t)\right)\right]^{'} \\\int\frac{1}{RC}\;dt&=\int-\left[ln\left(\varepsilon C-q(t)\right)\right]^{'}\;dt \\ \frac{t}{RC}+K&=-ln\left(\varepsilon C-q(t)\right) \\ K-\frac{t}{RC}&=ln\left(\varepsilon C-q(t)\right) \\ e^{K-\frac{t}{RC}}&=e^{ln\left(\varepsilon C-q(t)\right)} \\ e^Ke^{-\frac{t}{RC}}&=\varepsilon C-q(t) \\ Ke^{-\frac{t}{RC}}&=\varepsilon C-q(t)&&(1) \\ \\ K&=\varepsilon C-0&&\text{since $q(0)=0$} \\ K&=\varepsilon C&&(2) \\ \\ \varepsilon Ce^{-\frac{t}{RC}}&=\varepsilon C-q(t)&& \text{by (1) and (2)} \\ q(t)&=\varepsilon C-\varepsilon Ce^{-\frac{t}{RC}} \\ q(t)&=\varepsilon C\left[1-e^{-\frac{t}{RC}}\right]&&(3)
 \end{align*}
 
 \vspace{.2in}
@@ -56,7 +58,7 @@ i(t)&=q^{'}(t)\\&=\varepsilon C\left[\frac{1}{RC}e^{\frac{-t}{RC}}\right]\\&=\fr
 
 \noindent The distance of the proton from the wire of the circuit is small in comparison with the length of the wire. I will approximate the wire as an infinitely long current carrying wire. We can use the Biot-Savart law to find the magnetic field at any distance $r$ away from the wire. 
 \begin{align*}
-\left|\vec{B}\right|&=\frac{\mu_0I}{4\pi r}
+\left|\vec{B}\right|&=\frac{\mu_0I}{4\pi r}&(5)
 \end{align*}
 
 \vspace{.2in}
@@ -70,7 +72,7 @@ i(t)&=q^{'}(t)\\&=\varepsilon C\left[\frac{1}{RC}e^{\frac{-t}{RC}}\right]\\&=\fr
 
 \noindent Due to the set up of my system the proton will only have velocity components in the $x$ and $y$ directions. The force on our moving proton in the presence of a magnetic field is the superposition of the force due to the left and right side wires:
 \begin{align*}
-\vec{F}_m&=\vec{F}_{m,L}+\vec{F}_{m,R}\\&=\left[q\vec{v}\times\vec{B}_L\right]+\left[q\vec{v}\times\vec{B}_R\right]&&(5)
+\vec{F}_m&=\vec{F}_{m,L}+\vec{F}_{m,R}\\&=\left[q\vec{v}\times\vec{B}_L\right]+\left[q\vec{v}\times\vec{B}_R\right]&&(6)
 \end{align*}
 
 
@@ -96,12 +98,12 @@ i(t)&=q^{'}(t)\\&=\varepsilon C\left[\frac{1}{RC}e^{\frac{-t}{RC}}\right]\\&=\fr
 
 \noindent Solving for $\left|\Delta\vec{v}\right|$ and using (6) for $\left|\vec{F}_m\right|$ we have:
 \begin{align*}
-\Delta\vec{v}&=\frac{1}{m}\vec{F}_m\Delta t\\&=\frac{1}{m}\left[\vec{F}_{m,L}+\vec{F}_{m,R}\right]\Delta t\\&=\frac{1}{m}\left[q\vec{v}\times\vec{B}_L\right]\Delta t + \frac{1}{m}\left[q\vec{v}\times\vec{B}_R\right]\Delta t\\&=\frac{1}{m}\left[q\vec{v}\times\left(0\;\hat{x}+0\;\hat{y}+\frac{\mu_0I}{4\pi r}\;\hat{z}\right)\right]\Delta t + \frac{1}{m}\left[q\vec{v}\times\left(0\;\hat{x}+0\;\hat{y}-\frac{\mu_0I}{4\pi r}\;\hat{z}\right)\right]\Delta t&&(6)
+\Delta\vec{v}&=\frac{1}{m}\vec{F}_m\Delta t\\&=\frac{1}{m}\left[\vec{F}_{m,L}+\vec{F}_{m,R}\right]\Delta t&&(7)\\&=\frac{1}{m}\left[q\vec{v}\times\vec{B}_L\right]\Delta t + \frac{1}{m}\left[q\vec{v}\times\vec{B}_R\right]\Delta t\\&=\frac{1}{m}\left[q\vec{v}\times\left(0\;\hat{x}+0\;\hat{y}+\frac{\mu_0I}{4\pi r}\;\hat{z}\right)\right]\Delta t + \frac{1}{m}\left[q\vec{v}\times\left(0\;\hat{x}+0\;\hat{y}-\frac{\mu_0I}{4\pi r}\;\hat{z}\right)\right]\Delta t&&(8)
 \end{align*} 
 
 \vspace{.2in}
 
-\noindent We can visualize an approximation of the motion of the proton in the magnetic field created by the wire of charge using VPython. I will use time intervals of $\Delta t=.001$. At each point in time the program will use equation (7) to approximate the change in the proton's velocity over that time interval. A true calculation would require integration, but summing over $\Delta t=.001$ will give us a useful approximation for the purposes of this project. With $t_i$ representing the points in time at which we are calculating the velocity of the proton, we can approximate the velocity of the proton over the $i^{th}$ time interval $\Delta t$ by:
+\noindent We can visualize an approximation of the motion of the proton in the magnetic field created by the wire of charge using VPython (see final page for the source code). I will use time intervals of $\Delta t=.001$. At each point in time the program will use equation (8) to approximate the change in the proton's velocity over that time interval. A true calculation would require integration, but summing over $\Delta t=.001$ will give us a useful approximation for the purposes of this project. With $t_i$ representing the points in time at which we are calculating the velocity of the proton, we can approximate the velocity of the proton over the $i^{th}$ time interval $\Delta t$ by:
 \[
 v_{avg,i}=\left(v_{i-1}\right)+\frac{\Delta v}{2}
 \]
@@ -109,26 +111,237 @@ v_{avg,i}=\left(v_{i-1}\right)+\frac{\Delta v}{2}
 \vspace{.2in}
 
 \noindent We can then calculate the change in position of the proton over the $i^{th}$ time interval by:
-\[
-\Delta s_i=\left(v_{avg,i}\right)\Delta t
-\]
+\begin{align*}
+\Delta s_i&=\left(v_{avg,i}\right)\Delta t&&(9)
+\end{align*}
 
 \vspace{.2in}
 
-\noindent By looking at equation (6) for the $\Delta v$ of the proton we can decide on some parameters to vary while holding all others fixed and test to see how they affect the path of the proton. In particular we can test for a range of values of:
+\noindent By looking at equation (9) for the $\Delta v$ of the proton we can decide on some parameters to vary while holding all others fixed and test to see how they affect the path of the proton. In particular we can test for a range of values of:
+\begin{center}
+Resistance ($R$), Capacitance ($C$), Input voltage ($\varepsilon$), proton initial velocity ($v_0$), 
+
+proton charge ($q$), proton mass ($m$)
+\end{center}
+
+\newpage
+
+\noindent This table summarizes the relationships between the system variables of:
 \[
-R,\;C,\;\varepsilon,\;v_{initial},\;q,\;\text{and}\;\;m
+R,C,\varepsilon,v_0,q,\text{ and }m,
+\]
+\noindent and the magnitudes of the time dependent variables of: 
+\begin{center}
+current [$i(t_i)$], magnetic field [$B(t_i)$], magnetic force [$F_m(t_i)$], 
+
+proton's change in velocity [$\Delta v(t_i)$], and proton's change in position [$\Delta s(t_i)$]. 
+\end{center}
+
+\noindent Where $t_i$ represents the time at a given time step in our VPython program.
+\vspace{.3in}
+
+\[
+\begin{array}{|c||c|c|c|c|c|}
+ \hline
+ & i(t_i) & B(t_i) & F_m(t_i) & \Delta v(t_i) & \Delta s(t_i) \\ 
+ \hline\hline
+ \uparrow R & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow \\
+ \hline
+ \uparrow C & \uparrow & \uparrow & \uparrow & \uparrow & \uparrow \\
+ \hline
+ \uparrow \varepsilon & \uparrow & \uparrow & \uparrow & \uparrow & \uparrow \\
+ \hline
+ \uparrow v_0 &- & - & \uparrow & \uparrow & \uparrow \\
+ \hline
+ \uparrow q &- & - & \uparrow & \uparrow & \uparrow \\
+ \hline
+ \uparrow m  &- & - & - & \downarrow & \downarrow \\
+ \hline
+\end{array}
+\]
+\vspace{.4in}
+
+\noindent The remaining of the paper elaborates on the relationsips shown in this table. 
+
+
+\newpage
+
+\begin{center}
+{\bf\underline{Changing the Resistance}}
+\end{center}
+
+\begin{center}
+$R_1=1000\;\Omega$ , $R_2=2000\;\Omega$ , $R_3=4000\;\Omega$
+\end{center}
+\vspace{.1in}
+
+\noindent We can see in (4) 
+\[
+i(t)=\frac{\varepsilon}{R}\left[e^{\frac{-t}{RC}}\right]
+\]
+\vspace{.1in}
+
+\noindent that the relationship between current and resistance is somewhat complicated with $R$ appearing in two different locations having opposing effects:
+\begin{align*}
+(*)	& \hspace{.5in}\frac{\varepsilon}{R}		&& \hspace{.7in}\uparrow R, \downarrow i(t) \\
+(**)	& \hspace{.5in}e^{\frac{t}{RC}} 			&& \hspace{.7in}\uparrow R, \uparrow i(t)	 
+\end{align*} 
+
+\vspace{.1in}
+
+\noindent We see in our VPython simulation that ($*$) has a stronger effect. Hence, increasing $R$ has the affects shown in the previous table. 
+\vspace{.4in}
+
+\begin{center}
+\includegraphics[scale=.5]{resistance}
+\end{center}
+
+\newpage
+\begin{center}
+{\bf\underline{Changing the Capacitance}}
+\end{center}
+\begin{center}
+$C_1=.2\;\text{Farads}$, $C_2=.0002\;\text{Farads}$, $C_3=.00002\;\text{Farads}$
+\end{center} 
+\vspace{.1in}
+
+\noindent We can see from (4) 
+\[
+i(t)=\frac{\varepsilon}{R}\left[e^{\frac{-t}{RC}}\right]
 \]
 
+\noindent that increasing $C$ will decrease the current in the wires at time $t$. This is shown in our simulation. In the second and third cases the current decreases so rapidly that the magnietic field form the wire on the right is not even strong enough to change the direction of the proton before it passes the wire. 
+\vspace{.5in}
 
+\begin{center}
+\includegraphics[scale=.5]{capacitance}
+\end{center}
 
+\newpage
+\begin{center}
+{\bf\underline{Changing the Voltage source}}
+\end{center}
+\[
+\varepsilon_1=100\;\text{volts},\;\varepsilon_2=200\;\text{volts},\; \varepsilon_3=400\;\text{volts}
+\]
 
+\noindent We can see from (4) 
+\[
+i(t)=\frac{\varepsilon}{R}\left[e^{\frac{-t}{RC}}\right]
+\]
 
+\noindent that increasing $\varepsilon$ will increase the current at any time $t$. This is shown in our simulation where the cases with higher $\varepsilon$ show the proton changing direction more rapidly.
+\vspace{.5in}
 
+\begin{center}
+\includegraphics[scale=.5]{voltage}
+\end{center}
 
+\newpage
+\begin{center}
+{\bf\underline{Changing the initial velocity}}
+\end{center}
 
+\begin{center}
+	$v_{0,1}=10\;m/s\;\hat{y}$, $v_{0,2}=20\;m/s\;\hat{y}$, $v_{0,3}=30\;m/s\;\hat{y}$
+\end{center}
+\noindent We can see from (6)
+\[
+\vec{F}_m=\vec{F}_{m,L}+\vec{F}_{m,R}\\=\left[q\vec{v}\times\vec{B}_L\right]+\left[q\vec{v}\times\vec{B}_R\right]
+\]
+\noindent that an increase in the velocity of the proton will result in an increase in the magnetic force felt by the proton. Also, we see in (9) 
+\[
+\Delta s_i=\left(v_{avg,i}\right)\Delta t
+\]
+\noindent that a higher velocity also increases the change in postion over each time interval. 
+\vspace{.2in}
 
+\noindent The question is how will this affect the path of the proton? Will the increase in the magnetic force be strong enough to make the proton's change in position in the x-direction greater than the change in position in the y-direction? The simulation shows us that it is not. As the initial velocity (in the positive y-direction) increases, the change in the overall path of the proton is larger in the y-direction than in the x-direction.
+\vspace{.5in}
 
+\begin{center}
+\includegraphics[scale=.5]{velocity}
+\end{center}
 
+\newpage
+\begin{center}
+{\bf\underline{Changing the Charge of the particle}}
+\end{center}
+\begin{center}
+$q_1=1.6\times 10^{-19}$ Coulombs, $q_2=2q_1$, $q_3=4q_1$
+\end{center} 
 
+\noindent We can see from (6)
+\[
+\vec{F}_m=\vec{F}_{m,L}+\vec{F}_{m,R}\\=\left[q\vec{v}\times\vec{B}_L\right]+\left[q\vec{v}\times\vec{B}_R\right]
+\]
+\noindent that doubling the charge of the particle will double the magnetic force felt from each wire. Thus, our simulation should show that the particle changes direction more quickly as we increase the charge of the particle.
+\vspace{.5in}
+
+\begin{center}
+\includegraphics[scale=.5]{charge}
+\end{center}
+
+\newpage
+\begin{center}
+{\bf\underline{Changing the Mass of the particle}}
+\end{center}
+\begin{center}
+$m_1=1.7\times 10^{-27}$ kilograms, $m_2=2m_1$, $m_3=4m_1$
+\end{center}
+
+\noindent We can see from (7) 
+\[
+\Delta\vec{v}=\frac{1}{m}\left[\vec{F}_{m,L}+\vec{F}_{m,R}\right]\Delta t
+\]
+\noindent that increasing the mass of the particle will decrease $\Delta v$ of the particle. We see this in our simulation by the path of the particle changing less in the x-direction relative to the y-direction as the mass of the particle increases.
+\vspace{.5in}
+
+\begin{center}
+\includegraphics[scale=.5]{mass}
+\end{center}
+
+\newpage
+\begin{center}
+{\bf\underline{Constant Mass:Charge ratio for the particle}}
+\end{center}
+\begin{align*}
+m_1=1.7\times 10^{-27}\;\text{kilograms}	&\hspace{.4in}	m_2=2m_1	&&	m_3=4m_1 \\
+q_1=1.6\times 10^{-19}\;\text{coulombs}	&\hspace{.4in}	q_2=2q_1	&&	q_3=4q_1
+\end{align*}
+\vspace{.2in}
+\[
+\frac{m_1}{q_1}=\frac{m_2}{q_2}=\frac{m_3}{q_3}
+\]
+
+\noindent We see from (8)
+\[
+\Delta\vec{v}=\frac{1}{m}\left[q\vec{v}\times\left(0\;\hat{x}+0\;\hat{y}+\frac{\mu_0I}{4\pi r}\;\hat{z}\right)\right]\Delta t + \frac{1}{m}\left[q\vec{v}\times\left(0\;\hat{x}+0\;\hat{y}-\frac{\mu_0I}{4\pi r}\;\hat{z}\right)\right]\Delta t
+\]
+\noindent that if the ratio of $\frac{q}{m}$ remains the same, then $\Delta\vec{v}$ over each time interval does not change. This is shown in the simulation where each of the three casse have traced the same line.
+\vspace{.5in}
+
+\begin{center}
+\includegraphics[scale=.5]{mass_charge_ratio}
+\end{center}
+
+\newpage
+
+\begin{center}
+\underline{VPython source code (with $R_1$, $R_2$, and $R_3$)}
+\end{center}
+\vspace{.3in}
+
+\begin{center}
+\includegraphics[scale=.4]{source_code_1}
+\end{center}
+\begin{center}
+\includegraphics[scale=.4]{source_code_2}
+\end{center}
+\begin{center}
+\includegraphics[scale=.4]{source_code_3}
+\end{center}
+\begin{center}
+\includegraphics[scale=.4]{source_code_4}
+\end{center}
 \end{document}

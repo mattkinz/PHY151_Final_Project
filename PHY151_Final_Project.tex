@@ -67,17 +67,40 @@ i(t)&=q^{'}(t)\\&=\varepsilon C\left[\frac{1}{RC}e^{\frac{-t}{RC}}\right]\\&=\fr
 \begin{align*}
 \vec{B}_L&=0\;\hat{x}+0\;\hat{y}+\frac{\mu_0I}{4\pi r}\;\hat{z}&&\text{(the magnetic field due to the wire on the left side)}\\\vec{B}_R&=0\;\hat{x}+0\;\hat{y}-\frac{\mu_0I}{4\pi r}\;\hat{z}&&\text{(the magnetic field due to the wire on the right side)}
 \end{align*}
+\[
+\vec{B}_{net}=\vec{B}_L+\vec{B}_R
+\]
+\[
+\begin{array}{c c}
+\includegraphics[scale=.4]{bfield_only_side}	&	\includegraphics[scale=.4]{bfield_only_top}\\
+\text{Side view: from the right}								&	\text{Top view}
+\end{array} 
+\]
 
-\vspace{.2in}
+
+\newpage
+
+\begin{center}
+\underline{A view of the proton's motion through the B-field between the wires}
+
+(see appendix for the source code)
+\end{center}
+\[
+\begin{array}{c c}
+\includegraphics[scale=.5]{bfield_1}	& 	\text{Side angle view}	\\
+\includegraphics[scale=.5]{bfield_2}	& 	\text{Top angle view}	\\
+\includegraphics[scale=.5]{bfield_3}	&	\text{Top view}			
+\end{array}
+\]
+
+\newpage
 
 \noindent Due to the set up of my system the proton will only have velocity components in the $x$ and $y$ directions. The force on our moving proton in the presence of a magnetic field is the superposition of the force due to the left and right side wires:
 \begin{align*}
 \vec{F}_m&=\vec{F}_{m,L}+\vec{F}_{m,R}\\&=\left[q\vec{v}\times\vec{B}_L\right]+\left[q\vec{v}\times\vec{B}_R\right]&&(6)
 \end{align*}
 
-
-
-\newpage
+\vspace{.2in}
 
 \noindent I will consider the momentum of the proton in order to calculate the affect of the net magnetic force on the velocity of the proton over small time intervals:
 \[
@@ -124,7 +147,7 @@ Resistance ($R$), Capacitance ($C$), Input voltage ($\varepsilon$), proton initi
 proton charge ($q$), proton mass ($m$)
 \end{center}
 
-\newpage
+\vspace{.3in}
 
 \noindent This table summarizes the relationships between the system variables of:
 \[
@@ -136,6 +159,7 @@ current [$i(t_i)$], magnetic field [$B(t_i)$], magnetic force [$F_m(t_i)$],
 
 proton's change in velocity [$\Delta v(t_i)$], and proton's change in position [$\Delta s(t_i)$]. 
 \end{center}
+
 
 \noindent Where $t_i$ represents the time at a given time step in our VPython program.
 \vspace{.3in}
@@ -323,6 +347,21 @@ q_1=1.6\times 10^{-19}\;\text{coulombs}	&\hspace{.4in}	q_2=2q_1	&&	q_3=4q_1
 
 \begin{center}
 \includegraphics[scale=.5]{mass_charge_ratio}
+\end{center}
+
+\newpage
+
+\begin{center}
+\underline{VPython source code for B-Field and proton motion}
+\end{center}
+\vspace{.3in}
+
+\begin{center}
+\includegraphics[scale=.3]{source_code_bfield_1}
+
+\includegraphics[scale=.3]{source_code_bfield_2}
+
+\includegraphics[scale=.3]{source_code_bfield_3}
 \end{center}
 
 \newpage

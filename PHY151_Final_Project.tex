@@ -26,6 +26,24 @@
 
 \vspace{.1in}
 
+\noindent {\bf Abstract:} This is an investigation of the magnetic field created by two ajacent wires that are each a part of RC-circuits with the same componenents. VPython will be used to simulate the interaction between this magnetic field and a moving particle with positive charge.
+\vspace{.5in}
+
+\begin{center}
+\includegraphics[scale=.5]{circuits}
+
+Two RL-circuits with equivalent Resistor, Capacitor, and Voltage source.
+
+The magnetic fields created by the current in each circuit is shown.
+
+The positively charged particle is shown in yellow.
+
+\end{center}
+
+
+
+\newpage
+
 \noindent Kirchoff's loop law for circuits
 
 \noindent Ohm's Law : V = IR
@@ -47,8 +65,9 @@
 \varepsilon-v_R-v_C&=0 \\ \varepsilon-v_C&=v_R \\ \varepsilon-\frac{q(t)}{C}&=i(t)R &&\text{since $v_C(t)=\frac{q(t)}{C}$, and $v_R(t)=i(t)R$} \\ \varepsilon-\frac{q(t)}{C}&=q^{'}(t)R &&\text{since $i(t)=q^{'}(t)$} \\ \left(\frac{1}{RC}\right)\left[\varepsilon C-q(t)\right]&=q^{'}(t) \\ \frac{1}{RC}&=\frac{q^{'}(t)}{\varepsilon C-q(t)} \\ \frac{1}{RC}&=-\left[ln\left(\varepsilon C-q(t)\right)\right]^{'} \\\int\frac{1}{RC}\;dt&=\int-\left[ln\left(\varepsilon C-q(t)\right)\right]^{'}\;dt \\ \frac{t}{RC}+K&=-ln\left(\varepsilon C-q(t)\right) \\ K-\frac{t}{RC}&=ln\left(\varepsilon C-q(t)\right) \\ e^{K-\frac{t}{RC}}&=e^{ln\left(\varepsilon C-q(t)\right)} \\ e^Ke^{-\frac{t}{RC}}&=\varepsilon C-q(t) \\ Ke^{-\frac{t}{RC}}&=\varepsilon C-q(t)&&(1) \\ \\ K&=\varepsilon C-0&&\text{since $q(0)=0$} \\ K&=\varepsilon C&&(2) \\ \\ \varepsilon Ce^{-\frac{t}{RC}}&=\varepsilon C-q(t)&& \text{by (1) and (2)} \\ q(t)&=\varepsilon C-\varepsilon Ce^{-\frac{t}{RC}} \\ q(t)&=\varepsilon C\left[1-e^{-\frac{t}{RC}}\right]&&(3)
 \end{align*}
 
-\vspace{.2in}
-\noindent (3) is an expression for the charge on the capacitor at time $t$. Since the charges are deposited on the capacitor by the current we can differentiate this expression to find an expression for the current in the circuit at time $t$: 
+\newpage
+
+(3) is an expression for the charge on the capacitor at time $t$. Since the charges are deposited on the capacitor by the current we can differentiate this expression to find an expression for the current in the circuit at time $t$: 
 
 \begin{align*}
 i(t)&=q^{'}(t)\\&=\varepsilon C\left[\frac{1}{RC}e^{\frac{-t}{RC}}\right]\\&=\frac{\varepsilon}{R}\left[e^{\frac{-t}{RC}}\right]&&(4)
